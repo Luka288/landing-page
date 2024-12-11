@@ -7,6 +7,7 @@ const text = document.querySelector(".scrollText");
 const scrollIcon = document.querySelector(".scrollIcon");
 const burgerBartogg = document.querySelector(".toggleBar");
 const navItems = document.querySelector(".nav-items");
+const countNumbers = document.querySelectorAll(".statNumber");
 
 let activeDots = 0;
 let maxDots = 15;
@@ -16,10 +17,10 @@ let currIndex = 0;
 init();
 
 function init() {
-  // setInterval(flowingDots, 300);
   setInterval(speedingLines, 50);
   scrollReveals();
   typeWriter();
+  count();
 }
 
 function flowingDots() {
@@ -178,3 +179,22 @@ window.addEventListener("resize", () => {
     navItems.classList.remove("active");
   }
 });
+
+function count() {
+  let interval = 5000;
+
+  countNumbers.forEach((el) => {
+    let start = 0;
+    let end = parseInt(el.getAttribute("count-to"));
+    let durr = Math.floor(interval / end);
+
+    let startCounting = setInterval(() => {
+      start++;
+      el.textContent = start;
+
+      if (start === end) {
+        clearInterval(startCounting);
+      }
+    }, durr);
+  });
+}
