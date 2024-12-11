@@ -1,0 +1,273 @@
+:root {
+  --main-font-montserrat: "Montserrat", "Sans-Serif";
+  --nav-font-mono: "Roboto Mono", "Sans-Serif";
+  --nav-main-color: #ffffff;
+  --base-content-white: #ffffff;
+  --header-logo-hover: rgba(255, 255, 255, 0.7);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  color: var(--nav-main-color);
+  font-family: var(--nav-font-mono);
+  height: 80px;
+  z-index: 1121;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav .navLogo {
+  margin: 0;
+  padding: 0;
+  padding-left: 3%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+nav .navLogo li a {
+  position: relative;
+  text-decoration: none;
+  color: var(--nav-main-color);
+  font-size: 20px;
+  transition: all 0.3s;
+}
+
+.companyName:hover {
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.7),
+    0 0 24px rgba(255, 255, 255, 0.7), 0 0 36px rgba(1255, 255, 255, 0.7);
+}
+
+.companyName::after {
+  content: "";
+  position: absolute;
+  margin-top: 1px;
+  right: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--header-logo-hover);
+  transition: all 0.2s;
+}
+
+.companyName:hover::after {
+  width: 100%;
+  left: 0;
+  box-shadow: 0px 0px 20px 5px rgba(252, 252, 252, 4);
+}
+
+nav .nav-items {
+  display: flex;
+  align-items: center;
+  padding-right: 3%;
+  gap: 50px;
+  font-size: 20px;
+  font-family: var(--nav-font-mono);
+}
+
+nav .nav-item {
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+nav .nav-item:hover {
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.7),
+    0 0 24px rgba(255, 255, 255, 0.7), 0 0 36px rgba(1255, 255, 255, 0.7);
+  transition: all 0.3s;
+}
+
+nav .nav-items .nav-item a {
+  position: relative;
+  color: var(--nav-main-color);
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+nav .nav-items .nav-item a::after {
+  content: "";
+  position: absolute;
+  margin-top: 1px;
+  right: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--nav-main-color);
+  transition: all 0.2s;
+}
+
+nav .nav-items .nav-item a:hover::after {
+  width: 100%;
+  left: 0;
+  box-shadow: 0px 0px 20px 5px rgba(252, 252, 252, 4);
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+.textTune {
+  color: var(--base-content-white);
+}
+
+.topContainer {
+  width: 100%;
+  height: 100vh;
+  background-color: #0f0f0f;
+}
+
+.mainText {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainText h1 {
+  margin: 0;
+  padding: 0;
+  color: var(--base-content-white);
+  font-family: var(--main-font-montserrat);
+  font-size: 35px;
+  font-weight: 300;
+}
+
+.mainText p {
+  color: var(--base-content-white);
+  font-family: var(--main-font-montserrat);
+  font-weight: 200;
+}
+
+.speedLines {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.line {
+  position: absolute;
+  background: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0));
+  height: 2px;
+  animation: moveLine linear infinite;
+}
+
+.scrollSection {
+  height: 100vh;
+}
+
+.scrollContainer {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  color: white;
+  cursor: pointer;
+  bottom: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.scrollContainer p {
+  font-family: var(--main-font-montserrat);
+  font-size: 12px;
+}
+
+.scrollContainer i {
+  font-size: 24px;
+  margin-top: 10px;
+  animation-delay: 0.3s;
+}
+
+.secondSec {
+  background-color: #0e0e0e;
+}
+
+.toggleBar {
+  display: none;
+}
+
+@keyframes moveLine {
+  0% {
+    transform: translateX(-200px);
+  }
+  100% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+}
+
+@keyframes textBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes iconWave {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  75% {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 425px) {
+  nav {
+    justify-content: space-around;
+  }
+
+  nav .nav-items {
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    left: -100%;
+    top: 60px;
+    background: rgba(15, 15, 15, 0.43);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.8px);
+    -webkit-backdrop-filter: blur(8.8px);
+
+    transition: all 0.3s;
+  }
+
+  nav .nav-items.active {
+    visibility: visible;
+    left: 0%;
+    transition: all 0.3s;
+  }
+
+  .toggleBar {
+    display: block;
+    font-size: 20px;
+  }
+}
