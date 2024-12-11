@@ -105,7 +105,6 @@ window.addEventListener("scroll", () => {
     navigation.style.backgroundColor = "#1a1a1a";
     navigation.style.transition = "all 0.3s";
   } else {
-    console.log("1");
     navigation.style.backgroundColor = "transparent";
     navigation.style.transition = "all 0.3s";
   }
@@ -113,7 +112,6 @@ window.addEventListener("scroll", () => {
 
 window.addEventListener("wheel", (e) => {
   if (isScrolling) {
-    scrollContainer.style.visibility = "hidden";
     return;
   }
 
@@ -133,8 +131,6 @@ window.addEventListener("wheel", (e) => {
   setTimeout(() => {
     isScrolling = false;
   }, 300);
-
-  console.log(currIndex, sections.length - 1);
 });
 
 scrollContainer.addEventListener("click", function () {
