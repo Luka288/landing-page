@@ -19,6 +19,7 @@ function init() {
   // setInterval(flowingDots, 300);
   setInterval(speedingLines, 50);
   scrollReveals();
+  typeWriter();
 }
 
 function flowingDots() {
@@ -100,6 +101,15 @@ function scrollReveals() {
   });
 }
 
+function typeWriter() {
+  new Typewriter("#typeWrite", {
+    strings: ["What We Provide", "What We Provide"],
+    autoStart: true,
+    loop: true,
+    deleteSpeed: 30,
+  });
+}
+
 window.addEventListener("scroll", () => {
   if (window.scrollY > 450) {
     navigation.style.backgroundColor = "#1a1a1a";
@@ -110,28 +120,28 @@ window.addEventListener("scroll", () => {
   }
 });
 
-window.addEventListener("wheel", (e) => {
-  if (isScrolling) {
-    return;
-  }
+// window.addEventListener("wheel", (e) => {
+//   if (isScrolling) {
+//     return;
+//   }
 
-  isScrolling = true;
+//   isScrolling = true;
 
-  if (e.deltaY > 0 && currIndex < sections.length - 1) {
-    currIndex += 1;
-  } else if (e.deltaY < 0 && currIndex > 0) {
-    currIndex -= 1;
-  }
+//   if (e.deltaY > 0 && currIndex < sections.length - 1) {
+//     currIndex += 1;
+//   } else if (e.deltaY < 0 && currIndex > 0) {
+//     currIndex -= 1;
+//   }
 
-  window.scrollTo({
-    top: sections[currIndex].offsetTop,
-    behavior: "smooth",
-  });
+//   window.scrollTo({
+//     top: sections[currIndex].offsetTop,
+//     behavior: "smooth",
+//   });
 
-  setTimeout(() => {
-    isScrolling = false;
-  }, 300);
-});
+//   setTimeout(() => {
+//     isScrolling = false;
+//   }, 300);
+// });
 
 scrollContainer.addEventListener("click", function () {
   if (currIndex < sections.length - 1) {

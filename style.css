@@ -1,9 +1,15 @@
 :root {
   --main-font-montserrat: "Montserrat", "Sans-Serif";
   --nav-font-mono: "Roboto Mono", "Sans-Serif";
+  --card-font: "Raleway", "Sans-Serif";
   --nav-main-color: #ffffff;
   --base-content-white: #ffffff;
   --header-logo-hover: rgba(255, 255, 255, 0.7);
+}
+
+::selection {
+  background-color: white;
+  color: #0f0f0f;
 }
 
 body {
@@ -167,10 +173,6 @@ main {
   animation: moveLine linear infinite;
 }
 
-.scrollSection {
-  height: 100vh;
-}
-
 .scrollContainer {
   width: 100px;
   display: flex;
@@ -197,11 +199,100 @@ main {
 }
 
 .secondSec {
+  width: 100%;
+  height: 100%;
+  gap: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   background-color: #0e0e0e;
+}
+
+.aboutSection {
+  width: 100%;
+  height: auto;
+  font-size: 20px;
+  color: var(--base-content-white);
+  font-family: var(--main-font-montserrat);
+  text-align: center;
+  font-weight: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.aboutSection p {
+  text-align: center;
+}
+
+.aboutSection .aboutDesc {
+  width: 75%;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
 }
 
 .toggleBar {
   display: none;
+}
+
+.services {
+  width: 100%;
+  height: 100%;
+}
+
+#typeWrite {
+  font-weight: 400;
+}
+
+.cards {
+  width: 100%;
+  height: 500px;
+  gap: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.serviceCard {
+  width: 300px;
+  height: 250px;
+  padding: 20px;
+  color: var(--base-content-white);
+  font-family: var(--card-font);
+  font-weight: 350;
+  background-color: #1a1a1a;
+  border: 1px solid #121212;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s;
+}
+
+.serviceCard:hover {
+  box-shadow: 6px 5px 13px -1px rgba(209, 204, 204, 0.75);
+  -webkit-box-shadow: 6px 5px 13px -1px rgba(209, 204, 204, 0.75);
+  -moz-box-shadow: 6px 5px 13px -1px rgba(209, 204, 204, 0.75);
+  transition: all 0.3s;
+}
+
+.icon {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.icon i {
+  font-size: 60px;
+}
+
+.thirdSection {
+  width: 100%;
+  height: 100vh;
+  background-color: #646060;
 }
 
 @keyframes moveLine {
@@ -240,6 +331,20 @@ main {
   }
 }
 
+@media (max-width: 1024px) {
+  .cards {
+    height: calc(130% + 10%);
+  }
+
+  .aboutSection {
+    gap: 0px;
+  }
+
+  .aboutSection p {
+    font-size: 13px;
+  }
+}
+
 @media (max-width: 425px) {
   nav {
     justify-content: space-around;
@@ -268,6 +373,14 @@ main {
 
   .toggleBar {
     display: block;
+    font-size: 20px;
+  }
+
+  .mainText {
+    text-align: center;
+  }
+
+  #typeWrite {
     font-size: 20px;
   }
 }
