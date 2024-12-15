@@ -19,7 +19,7 @@ init();
 function init() {
   setInterval(speedingLines, 50);
   scrollReveals();
-  typeWriter();
+  // typeWriter();
   count();
 }
 
