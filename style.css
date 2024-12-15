@@ -550,7 +550,7 @@ footer {
   }
 
   .aboutSection p {
-    font-size: 13px;
+    font-size: 23px;
   }
 }
 
@@ -603,6 +603,10 @@ footer {
     padding-top: 20px;
     flex-direction: column;
     height: auto;
+  }
+
+  .aboutSection p {
+    font-size: 15px;
   }
 
   .wrapper {

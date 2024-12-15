@@ -112,7 +112,6 @@ function typeWriter() {
 }
 
 window.addEventListener("scroll", () => {
-  console.log(scrollY);
   if (window.scrollY >= 300) {
     navigation.style.backgroundColor = "#1a1a1a";
     navigation.style.transition = "all 0.3s";
@@ -122,39 +121,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-//! fixed scroll (Turned Off)
-// window.addEventListener("wheel", (e) => {
-//   if (isScrolling) {
-//     return;
-//   }
-
-//   isScrolling = true;
-
-//   if (e.deltaY > 0 && currIndex < sections.length - 1) {
-//     currIndex += 1;
-//   } else if (e.deltaY < 0 && currIndex > 0) {
-//     currIndex -= 1;
-//   }
-
-//   window.scrollTo({
-//     top: sections[currIndex].offsetTop,
-//     behavior: "smooth",
-//   });
-
-//   setTimeout(() => {
-//     isScrolling = false;
-//   }, 300);
-// });
-
 scrollContainer.addEventListener("click", function () {
-  // if (currIndex < sections.length - 1) {
-  //   currIndex++;
-  //   window.scrollTo({
-  //     top: sections[currIndex].offsetTop,
-  //     behavior: "smooth",
-  //   });
-  // }
-
   scrollContainer.scrollIntoView({
     behavior: "smooth",
     block: "start",
