@@ -112,7 +112,8 @@ function typeWriter() {
 }
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 450) {
+  console.log(scrollY);
+  if (window.scrollY >= 300) {
     navigation.style.backgroundColor = "#1a1a1a";
     navigation.style.transition = "all 0.3s";
   } else {

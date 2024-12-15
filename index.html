@@ -201,16 +201,62 @@
         </div>
       </section>
       <section class="contactForm">
-        <form action="">
-          <div class="right">
-            <div class="email">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" />
+        <div class="contactTitle">
+          <h2>Contact US</h2>
+        </div>
+        <form action="" id="formContact">
+          <div class="wrapper">
+            <div class="leftSide">
+              <div class="firstNameC">
+                <label class="labelDeco" for="firstname">First name:</label>
+                <input
+                  class="inputDeco"
+                  type="text"
+                  name="firstname"
+                  id="firstname"
+                  placeholder="First name"
+                />
+              </div>
+              <div class="lastNameC">
+                <label class="labelDeco" for="lastName">Last name:</label>
+                <input
+                  type="text"
+                  name="lastName"
+                  id="lastName"
+                  placeholder="last Name"
+                  class="inputDeco"
+                />
+              </div>
+            </div>
+            <div class="rightSide">
+              <div class="emailContainer">
+                <label class="labelDeco" for="email">Email:</label>
+                <input
+                  class="inputDeco"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                />
+              </div>
+              <div class="businessName">
+                <label class="labelDeco" for="business"
+                  >Name of your company</label
+                >
+                <input
+                  class="inputDeco"
+                  type="text"
+                  id="business"
+                  name="business"
+                  placeholder="Company name"
+                />
+              </div>
             </div>
           </div>
-          <div class="left"></div>
+          <button class="submitBtn">Send</button>
         </form>
       </section>
     </main>
+    <footer></footer>
   </body>
 </html>
