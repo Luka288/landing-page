@@ -477,6 +477,7 @@ footer {
   flex-direction: column;
   text-transform: capitalize;
   align-items: baseline;
+  flex-wrap: wrap;
   height: 250px;
   gap: 10px;
   font-size: 20px;
@@ -486,7 +487,7 @@ footer {
 .footerCon a {
   text-decoration: none;
   color: var(--base-content-white);
-  font-weight: 300;
+  font-weight: 400;
 }
 
 @keyframes moveLine {
@@ -539,9 +540,34 @@ footer {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 768px) {
+  .footerCon {
+    width: 200px;
+  }
+
   .wrapper {
     height: 400px;
+    flex-direction: column;
+  }
+
+  footer {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 425px) {
+  footer {
+    padding-top: 20px;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .wrapper {
+    height: 400px;
+  }
+
+  .wrapper input {
+    width: 200px;
   }
 
   nav .nav-items {
