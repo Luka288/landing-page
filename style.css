@@ -182,6 +182,7 @@ main {
   position: absolute;
   color: white;
   cursor: pointer;
+  scroll-behavior: smooth;
   bottom: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -373,6 +374,12 @@ main {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.contactForm {
+  width: 100%;
+  height: 500px;
+  background-color: #181818;
 }
 
 @keyframes moveLine {

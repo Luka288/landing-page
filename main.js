@@ -121,6 +121,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
+//! fixed scroll (Turned Off)
 // window.addEventListener("wheel", (e) => {
 //   if (isScrolling) {
 //     return;
@@ -145,13 +146,18 @@ window.addEventListener("scroll", () => {
 // });
 
 scrollContainer.addEventListener("click", function () {
-  if (currIndex < sections.length - 1) {
-    currIndex++;
-    window.scrollTo({
-      top: sections[currIndex].offsetTop,
-      behavior: "smooth",
-    });
-  }
+  // if (currIndex < sections.length - 1) {
+  //   currIndex++;
+  //   window.scrollTo({
+  //     top: sections[currIndex].offsetTop,
+  //     behavior: "smooth",
+  //   });
+  // }
+
+  scrollContainer.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
 });
 
 setTimeout(() => {
